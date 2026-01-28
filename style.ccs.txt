@@ -1,0 +1,199 @@
+ <style>
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      font-family: "Georgia", serif;
+      background: #fef9ff;
+      color: #444;
+      line-height: 1.8;
+    }
+
+    /* MENU */
+    nav {
+      position: fixed;
+      top: 0;
+      width: 100%;
+      background: rgba(255, 255, 255, 0.8);
+      backdrop-filter: blur(10px);
+      padding: 15px;
+      text-align: center;
+      z-index: 1000;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+      transition: background 0.3s;
+    }
+
+    nav a {
+      margin: 0 18px;
+      color: #b8a1dd;
+      text-decoration: none;
+      font-size: 1rem;
+      letter-spacing: 1px;
+      position: relative;
+      transition: color 0.3s;
+    }
+
+    nav a::after {
+      content: '';
+      display: block;
+      height: 2px;
+      width: 0;
+      background: #b8a1dd;
+      transition: width 0.3s;
+      position: absolute;
+      bottom: -5px;
+      left: 0;
+    }
+
+    nav a:hover {
+      color: #7c5fa3;
+    }
+
+    nav a:hover::after {
+      width: 100%;
+    }
+
+    /* HEADER */
+    header {
+      height: 100vh;
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      padding: 20px;
+      overflow: hidden;
+    }
+
+    /* Sfondo animato: tua immagine */
+    header::before {
+      content: "";
+      position: absolute;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      background: url("A_complete_HTML_document_with_Italian_text_feature.jpg") center/cover no-repeat;
+      opacity: 0.85;
+      animation: moveBackground 60s linear infinite;
+      z-index: -2;
+    }
+
+    /* Fiorellini fluttuanti */
+    .flower {
+      position: absolute;
+      width: 30px;
+      height: 30px;
+      background: url('images/petal.png') no-repeat center/contain;
+      animation: floatFlower linear infinite;
+      opacity: 0.8;
+    }
+
+    header h1 {
+      font-size: 3.5rem;
+      color: #b8a1dd;
+      margin-bottom: 10px;
+      letter-spacing: 3px;
+      text-shadow: 0 4px 10px rgba(184,161,221,0.5);
+      z-index: 1;
+    }
+
+    header p {
+      font-size: 1.2rem;
+      color: #7c5fa3;
+      max-width: 600px;
+      z-index: 1;
+    }
+
+    /* SEZIONI */
+    section {
+      max-width: 1000px;
+      margin: auto;
+      padding: 120px 20px;
+    }
+
+    .card {
+      background: #fff0ff;
+      border-radius: 25px;
+      padding: 50px;
+      box-shadow: 0 20px 50px rgba(0,0,0,0.07);
+      margin-bottom: 60px;
+      opacity: 0;
+      transform: translateY(40px);
+      animation: fadeUp 0.9s ease forwards;
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
+
+    .card:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 25px 60px rgba(0,0,0,0.1);
+    }
+
+    .card:nth-child(2) {
+      animation-delay: 0.2s;
+    }
+
+    h2 {
+      color: #b8a1dd;
+      font-weight: normal;
+      letter-spacing: 2px;
+    }
+
+    .img-box {
+      text-align: center;
+      margin-top: 30px;
+    }
+
+    .img-box img {
+      max-width: 350px;
+      width: 100%;
+      border-radius: 20px;
+      box-shadow: 0 15px 35px rgba(0,0,0,0.08);
+    }
+
+    /* FOOTER */
+    footer {
+      text-align: center;
+      padding: 60px 20px;
+      font-size: 0.9rem;
+      color: #888;
+      background: linear-gradient(to top, #fff0ff, #fef9ff);
+    }
+
+    footer a {
+      color: #b8a1dd;
+      text-decoration: none;
+      transition: color 0.3s;
+    }
+
+    footer a:hover {
+      color: #7c5fa3;
+      text-decoration: underline;
+    }
+
+    footer strong {
+      color: #b8a1dd;
+      font-size: 1.1rem;
+    }
+
+    /* ANIMAZIONI */
+    @keyframes fadeUp {
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @keyframes moveBackground {
+      0% { background-position: center top; }
+      50% { background-position: center center; }
+      100% { background-position: center top; }
+    }
+
+    @keyframes floatFlower {
+      0% { transform: translateY(0) rotate(0deg); }
+      100% { transform: translateY(-800px) rotate(360deg); }
+    }
+
+  </style>
